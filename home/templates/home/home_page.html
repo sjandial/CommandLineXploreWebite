@@ -1,0 +1,98 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head >
+        <link rel="stylesheet" type="text/css" href="/static/home/style_ques.css">
+        <title>Command Line</title>
+    </head>
+
+
+
+    <body >
+    {% ifequal hk "online" %}
+    <div>
+       
+        <center>
+
+        
+        <div id="header">
+            <p style="font-size:17px;float:left;">User : {{username}}</p>
+        <a id="but" href="/home/logout/" style="float: right">Finish Test</a><br/>
+            <font size=30>Commandline Xplore </font>
+        </div>
+        <div id="nav" style="float:left">
+            <a href="/home/1/" id="button"> <div id=q>1</div></a><br>
+            <a href="/home/2/" id="button"><div id=q>2</div></a><br>
+            <a href="/home/3/" id="button"><div id=q>3</div></a><br>
+            <a href="/home/4/" id="button"><div id=q>4</div></a><br>
+            <a href="/home/5/" id="button"><div id=q>5</div></a><br>
+            <a href="/home/6/" id="button"><div id=q>6</div></a><br>
+            <a href="/home/7/" id="button"><div id=q>7</div></a><br>
+            <a href="/home/8/" id="button"><div id=q>8</div></a><br>
+            <a href="/home/9/" id="button"><div id=q>9</div></a><br>
+            <a href="/home/10/" id="button"><div id=q>10</div></a><br>
+            <a href="/home/11/" id="button"><div id=q>11</div></a><br>
+            <a href="/home/12/" id="button"><div id=q>12</div></a><br>
+            <a href="/home/13/" id="button"><div id=q>13</div></a><br>
+            <a href="/home/14/" id="button"><div id=q>14</div></a><br>
+            <a href="/home/15/" id="button"><div id=q>15</div></a><br>
+            <a href="/home/16/" id="button"><div id=q>16</div></a><br>
+            <a href="/home/17/" id="button"><div id=q>17</div></a><br>
+            <a href="/home/18/" id="button"><div id=q>18</div></a><br>
+            <a href="/home/19/" id="button"><div id=q>19</div></a><br>
+            <a href="/home/20/" id="button"><div id=q>20</div></a><br>-->
+        </div>
+        <div id="ques">{{ques1}}<br><br></div>
+
+        <form method="POST" id="answer" >
+            {% csrf_token %}
+            
+            {% if flag%}
+            <div>
+                
+                <textarea rows = "5" cols="100" name='answ'  style="margin-left:100px">{{prevans}}</textarea>
+            </div><br><br>
+            {% else %}
+            <div>               
+                <textarea rows = "5" cols="100" name='answ' placeholder="{{prevans}}" style="margin-left:100px"></textarea>
+            </div><br><br>
+            {% endif %}
+
+        <div id="save"> 
+            <!--{%if back_value%}
+            <button name="back" type="submit"  formaction="{{back}}">&nbsp;Back</button>        
+            {%endif%}
+                &nbsp;&nbsp;&nbsp;-->
+            <button name="submit" type="submit"  formaction="{{submit}}">&nbsp;Save</button>
+                &nbsp;&nbsp;&nbsp;
+            <!-- {%if next_value%}
+            <button name="next" type="submit"  formaction="{{next}}">&nbsp;Next</button>
+            {%endif%} -->
+            <p style="color: white">{{x}}</p>
+        </div> 
+        </form>
+
+    	<!-- <form action="/home/submit_ans" method="POST">
+    	{% csrf_token %}
+    		ANS:
+    		<input type"text" name="ans" id="inp"><br/><br/>
+    		<input type="submit" value="Submit" name="Submit" id="su1">
+    	</form> -->
+        </center>
+    </div>
+
+    {% else %}
+        <h1 id="header1">CommandLine Xplore
+        <br>
+        Linux is all about Imagination
+        </h1>
+        <center>
+        <br><br><br><br><br><br>
+          <b>  <a id="register" href="/home/register/">Register Here</a><br>
+            <br><br>
+            <a id="login" href="/home/login/">Login Here</a><br>
+            </center>
+    {% endifequal %}
+    
+    </body>
+</html>

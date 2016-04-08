@@ -1,0 +1,120 @@
+#header
+{
+    border-bottom:3px solid grey;
+    text-align: center;
+    color: #ffffff;
+    background:linear-gradient(#cbcbc1,#000000);
+    /*background-color: #152737;*/
+}
+#header1
+{
+    border-bottom:3px solid grey;
+    text-align: center;
+    color: #ffffff;
+    background:linear-gradient(#cbcbc1,#000000);
+    font-size:40px;
+    /*background-color: #152737;*/
+}
+body {
+    background-image: url('/static/home/img/IMAG0706_1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+} 
+#nav {
+    line-height:0px;
+    background-color:#eeeeee;
+    height:340px;
+    width:100px;
+    float:left;
+    padding:5px;
+}
+#section {
+    width:350px;
+    float:left;
+    padding:10px;
+}
+
+#but{
+    color: #ffffff;
+    background-color: #000000;
+    display: block;
+    height: 25px;
+    width: 100px;
+    border: 2px solid grey;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+#but:hover
+{
+    background:#2d2d2d;
+    cusor: pointer;
+}
+#button
+{
+    display: block;
+    height: 25px;
+    width: 100px;
+    background-color: #000000; 
+    border: 1px solid grey;
+    color: #ffffff;
+    text-align: center;
+    text-decoration:none;
+    
+
+}
+#button:hover
+{
+    background: #2d2d2d;
+    cursor: pointer;
+
+}
+#done{
+float:right;
+margin-top:20px;
+border:0;
+margin-right: 10px;
+   
+    height:35px;
+    width:150px;
+    background:#ff3333;
+    font-size:18px;
+    color:#fff;
+    
+}
+#ques{
+margin-top: 120px;
+margin-left: 210px;
+color:#ffffff;
+/*border: 1px solid black;*/
+background:linear-gradient(#303030,#101010);
+
+/*background-color: #303030;*/
+}
+
+#q{
+    margin-top: 14px;
+}
+#save{
+    
+}
+#login{
+    background-color: #ffffff;
+    border:1px solid grey;
+    font-size: 35px;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 5px;
+}
+#register{
+    background-color: #ffffff;
+    border:1px solid grey;
+    font-size: 35px;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 5px;
+}

@@ -1,0 +1,161 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>THE VINCI CODE</title>
+        <style>
+        body{
+            
+            background-color: #fff;
+        }
+        table#t01 {
+            width: 100%;
+            background-color: #f1f1c1;
+            border: 1px solid black;
+            border-collapse: collapse;
+            }
+            th, td {
+                text-align: center;
+            border: 4px solid green;
+            border-collapse: collapse;
+            }
+            th{background-color: green;color:white;}
+            table#t01 tr:nth-child(even) {
+                background-color: #eee;
+                    }
+            table#t01 tr:nth-child(odd) {
+                background-color: #fff;
+                    }
+                    b{text-decoration: none;}
+
+                #su
+                {
+                    padding:5px 20px;
+                    text-decoration:none;
+                    border:1px solid green;
+                    color:green;
+                    border-radius:4px;
+                    float:right;
+                    margin-top:10px;
+                    margin-right: 10px;
+                    background-color: white;               
+                 }
+                #su:hover
+                {
+
+                    padding:5px 20px;
+                    text-decoration:none;
+                    border:1px solid green;
+                    color:white;
+                    border-radius:4px;
+                    float:right;
+                    margin-top:10px;
+                    margin-right: 10px;
+                    background-color: green;
+
+                }
+                #su1
+                {
+                    padding:5px 20px;
+                    text-decoration:none;
+                    border:1px solid green;
+                    color:green;
+                    border-radius:4px;
+                  
+                    background-color: white;               
+                 }
+                #su1:hover
+                {
+
+                    padding:5px 20px;
+                    text-decoration:none;
+                    border:1px solid green;
+                    color:white;
+                    border-radius:4px;
+                   
+                    background-color: green;
+
+                }
+                #inp
+                {
+                  width:250px;
+                  border:2px solid green;
+                  padding:3px;
+                  border-radius:4px;
+
+                }
+                #inp:focus
+                {
+                  width:250px;
+                  border:2px solid green;
+                  padding:3px;
+                  border-radius:4px;
+                  outline-color: green;
+
+                }
+        </style> 
+    </head>
+
+
+
+    <body>
+    {% ifequal hk "online" %}
+    <div>
+       <p style="font-size:17px;float:left;">User : {{username}}</p>
+        <a href="/home/logout/" id="su" >Logout</a><br/>
+        <center>
+        <br/><br/>
+    	<p>KEY FOR NEXT QUESTION {{key}}</p>
+        <br/>
+    	<form action="/home/submit_ans" method="POST">
+    	{% csrf_token %}
+    		ANS:
+    		<input type"text" name="ans" id="inp"><br/><br/>
+    		<input type="submit" value="Submit" name="Submit" id="su1">
+    	</form>
+        </center>
+        </div>
+        <br/><br/><br/><br/><br/>
+          
+         
+        <center> 
+        <div style="width:60%">
+        <p id="demo">hello</p>
+        </div>
+        </center>
+        <div>
+        <script type="text/javascript">
+            function dashboard()
+            {
+                var xhttp = new XMLHttpRequest();
+                //alert();
+                xhttp.onreadystatechange = function()
+                    {//alert("shravan");
+                        if (xhttp.readyState == 4 && xhttp.status == 200)
+                        {
+                                document.getElementById("demo").innerHTML =xhttp.responseText;
+
+                                t=setTimeout(dashboard(), 1000);
+                                
+                        }
+                    }
+                    
+                xhttp.open("GET", "/home/dashboard/", true);
+                xhttp.send();
+
+
+            }
+
+            dashboard();
+        </script>
+      </div>
+
+    {% else %}
+        <h1>WELCOME TO THE FASCINATING EVENT !!!!!!!!!!!!Da vinci code</h1>
+          <b>  <a href="/home/register/">Register Here</a><br>
+            <a href="/home/login/">Login Here</a><br>
+            <a href="{% static 'home/img/shravan.zip' %}">Download Question Folder</a></b>
+    {% endifequal %}
+    
+    </body>
+</html>
