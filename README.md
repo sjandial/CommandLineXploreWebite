@@ -1,4 +1,4 @@
-# CommandLineXploreWebite
+#QuestionAndAnswerSubmissionPortal
 It is a website that provides you with an interface to conduct any questionare type contest.First the user have to register themseleves and after registering the question page opens up.There is list of all the on the left navigation bar.It is developed in Django using HTML and CSS.
 
 Dependency
